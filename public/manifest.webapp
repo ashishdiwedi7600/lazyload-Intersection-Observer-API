@@ -1,0 +1,52 @@
+{
+  "name": "SampleCall lazy",
+  "description": "A test app",
+  "display": "HLS",
+  "subtitle": "Test HLS",
+  "version": "1.0.1.0",
+  "theme": "#51b7c1",
+  "launch_path": "/index.html",
+  "icons": {
+    "56": "/icons/icon48x48.png",
+    "84": "/icons/icon128x128.png"
+   
+  },
+  "origin": "app://hls.jio.com",
+  "fullscreen": true,
+  "type": "privileged",
+  "permissions": {
+    "volumemanager": {},
+    "systemXHR": {},
+     "serviceWorker":{
+             "description": "required for handle push."
+          },
+      "push":{
+             "description": "New update push."
+          },
+      "desktop-notification": {
+             "description": "New content update notification for the user."
+          },
+          "notification":{},
+    "cross-domain-content": "*"
+  },
+  "developer": {
+    "name": "Jio",
+    "url": "http://www.jio.com"
+  },
+  "default_locale": "en-US",
+  "locales": {
+    "en-US": {
+      "name": "HLS",
+      "description": "A test app",
+      "subtitle": "Test HLS"
+    }
+  },
+  "filters": [
+  {
+    "type": "pattern",
+    "pattern": { "required": true }
+  }, {
+    "type": "timeout",
+    "timeout": { "required": false, "min": 10000, "max": 180000 }
+  }]
+}

@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect, Suspense } from 'react';
 
-function App() {
+// Import components lazily
+const LazyComponent1 = React.lazy(() => import('./lazyloadComponent1'));
+const LazyComponent2 = React.lazy(() => import('./lazyloadComponent2'));
+// Import more lazy components as needed
+
+function HomePage() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Home Page</h1>
+      <Suspense fallback={<div>Loading...123</div>}>
+        
+        <h2>helo</h2>
+        <h2>helo</h2>
+        <h2>helo</h2>
+        <h2>helo</h2>
+        <h2>helo</h2>
+        <h2>helo</h2>
+        <h2>helo</h2>
+        <h2>helo</h2>
+        <h2>helo</h2>
+        <h2>helo</h2>
+        <h2>helo</h2>
+        <h2>helo</h2>
+        <h2>helo</h2>
+        <LazyComponent1 />
+        <LazyComponent2 />
+        {/* Render more lazy components here */}
+      </Suspense>
     </div>
   );
 }
 
-export default App;
+export default HomePage;
